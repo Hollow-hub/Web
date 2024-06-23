@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f0f0f0;
 }
 
@@ -33,6 +33,14 @@ body {
     grid-row: 1 / 2;
     padding: 20px;
     background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentation-window video {
+    width: 100%;
+    height: auto;
 }
 
 .events-chat {
@@ -79,20 +87,56 @@ body {
     .container {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
+        gap: 10px;
+    }
+
+    .presentation-window {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        padding: 10px;
     }
 
     .events-chat {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
+        padding: 10px;
+        border-left: none;
+        border-top: 1px solid #ccc;
     }
 
     .user-area {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+        padding: 10px;
     }
 
     .user {
+        padding: 10px;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        gap: 10px;
+    }
+
+    .presentation-window {
+        padding: 10px;
+    }
+
+    .events-chat {
+        padding: 10px;
+    }
+
+    .user-area {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .user {
+        padding: 10px;
         margin: 5px 0;
     }
 }
